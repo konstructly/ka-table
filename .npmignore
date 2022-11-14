@@ -1,0 +1,7 @@
+/.github
+/.idea
+/build
+/node_modules
+/public
+/src
+/.gitignore

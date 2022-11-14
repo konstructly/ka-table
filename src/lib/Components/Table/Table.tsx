@@ -56,7 +56,7 @@ export interface ITableProps {
   validation?: ValidationFunc;
   virtualScrolling?: VirtualScrolling;
   width?: number | string;
-  summaryCollapsibleRow?: boolean;
+  summaryLine?: boolean;
   isTableBodyCollapsed?: boolean;
 }
 

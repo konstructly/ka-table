@@ -39,7 +39,7 @@ const SummaryCollapsibleRowDemo: React.FC = () => {
   return (
     <Table
       {...tableProps}
-      summaryCollapsibleRow={true}
+      summaryLine={true}
       dispatch={dispatch}
       childComponents={{
         tableWrapper: {

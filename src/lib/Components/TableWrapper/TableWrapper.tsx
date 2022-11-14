@@ -27,7 +27,7 @@ export const TableWrapper: React.FunctionComponent<ITableAllProps> = (props) => 
     selectedRows = [],
     sortingMode = SortingMode.None,
     virtualScrolling,
-    summaryCollapsibleRow,
+    summaryLine,
     isTableBodyCollapsed
   } = props;
   let {
@@ -73,7 +73,7 @@ export const TableWrapper: React.FunctionComponent<ITableAllProps> = (props) => 
             filteringMode={filteringMode}
             groupColumnsCount={preparedOptions.groupColumnsCount}
             sortingMode={sortingMode}
-            summaryCollapsibleRow={summaryCollapsibleRow}
+            summaryCollapsibleRow={summaryLine}
             isTableBodyCollapsed={isTableBodyCollapsed}
           />
           <TableBody

@@ -23,6 +23,9 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
             className={isTableBodyCollapsed === undefined || isTableBodyCollapsed
               ? defaultOptions.css.iconGroupArrowExpanded : defaultOptions.css.iconGroupArrowCollapsed}
           />
+          <div>
+            All
+          </div>
         </th>
         {content ??
           (

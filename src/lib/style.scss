@@ -321,6 +321,8 @@
 }
 
 .ka-summary-line-cell {
+  display: flex;
+  align-items: center;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 7px;
 }
