@@ -20,7 +20,7 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
     groupColumnsCount,
     sortingMode,
     groupedColumns = [],
-    summaryCollapsibleRow,
+    summaryLine,
     isTableBodyCollapsed,
     data
   } = props;
@@ -46,7 +46,7 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
             filteringMode={filteringMode}
           />
         )}
-        {(summaryCollapsibleRow && !groupedColumns.length) &&
+        {(summaryLine && !groupedColumns.length) &&
           (
             <SummaryLine
               areAllRowsSelected={areAllRowsSelected}

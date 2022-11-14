@@ -73,7 +73,7 @@ export const TableWrapper: React.FunctionComponent<ITableAllProps> = (props) => 
             filteringMode={filteringMode}
             groupColumnsCount={preparedOptions.groupColumnsCount}
             sortingMode={sortingMode}
-            summaryCollapsibleRow={summaryLine}
+            summaryLine={summaryLine}
             isTableBodyCollapsed={isTableBodyCollapsed}
           />
           <TableBody

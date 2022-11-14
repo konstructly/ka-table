@@ -154,7 +154,7 @@ export interface ITableHeadProps {
   filteringMode: FilteringMode;
   groupColumnsCount: number;
   sortingMode: SortingMode;
-  summaryCollapsibleRow?: boolean;
+  summaryLine?: boolean;
   isTableBodyCollapsed?: boolean;
   data?: unknown[];
 }
