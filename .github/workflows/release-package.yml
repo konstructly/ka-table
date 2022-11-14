@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
+      - run: npm config set 'https://npm.pkg.github.com/:_authToken' "${NPM_TOKEN}"
       - run: yarn
       - run: yarn compile
       - run: yarn publish
