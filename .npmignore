@@ -5,3 +5,7 @@
 /public
 /src
 /.gitignore
+.travis.yml
+tslint.json
+yarn-error.log
+yarn.lock

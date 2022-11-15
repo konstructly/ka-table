@@ -76,7 +76,7 @@ import SummaryDemo from './SummaryDemo/SummaryDemo';
 import TabIndexDemo from './TabIndexDemo/TabIndexDemo';
 import TreeModeDemo from './TreeModeDemo/TreeModeDemo';
 import ValidationDemo from './ValidationDemo/ValidationDemo';
-import SummaryCollapsibleRowDemo from './SummaryCollapsibleDemo/SummaryCollapsibleRowDemo';
+import SummaryCollapsibleRowDemo from './SummaryLineDemo/SummaryCollapsibleRowDemo';
 
 initializeGA();
 

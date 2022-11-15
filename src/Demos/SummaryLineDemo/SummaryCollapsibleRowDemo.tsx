@@ -50,6 +50,7 @@ const SummaryCollapsibleRowDemo: React.FC = () => {
             const sum = props.data?.reduce((acc, curr) => acc + (curr as any).column5, 0) as number;
             return (
               <>
+                <th style={{ textAlign: 'left', paddingLeft: '20px'}}>{`${props.isTableBodyCollapsed ? '-' : '+'}`}</th>
                 <th colSpan={props.columns.length - 1} style={{ textAlign: 'right', paddingRight: '15px'}}>Index sum: {sum}</th>
               </>
             )

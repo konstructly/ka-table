@@ -18,20 +18,19 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
   return (
     <>
       <tr {...elementAttributes} style={{top: `${top}px`}} onClick={() => {dispatch(collapseTableBody())}} role='none'>
-        <th className={defaultOptions.css.summaryLineCell}>
-          <div
-            className={isTableBodyCollapsed === undefined || isTableBodyCollapsed
-              ? defaultOptions.css.iconGroupArrowExpanded : defaultOptions.css.iconGroupArrowCollapsed}
-          />
-          <div>
-            All
-          </div>
-        </th>
-        {content ??
+        {content ||
           (
-            <th colSpan={columns.length - 1} className={defaultOptions.css.summaryLineCell}>
-              All
-            </th>
+            <>
+              <th className={defaultOptions.css.summaryLineCell}>
+                <div
+                  className={isTableBodyCollapsed === undefined || isTableBodyCollapsed
+                    ? defaultOptions.css.iconGroupArrowExpanded : defaultOptions.css.iconGroupArrowCollapsed}
+                />
+              </th>
+              <th colSpan={columns.length - 1} className={defaultOptions.css.summaryLineCell}>
+                All
+              </th>
+            </>
           )
         }
       </tr>

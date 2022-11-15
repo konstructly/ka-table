@@ -413,7 +413,15 @@ const kaReducer: any = (props: ITableProps, action: any): ITableProps => {
       return { ...props, treeGroupsExpanded: currentExpanded.filter(item => item !== rowKeyValue) };
     }
     case ActionType.CollapseTableBody: {
-      return { ...props, isTableBodyCollapsed: props.isTableBodyCollapsed === undefined ? false : !props.isTableBodyCollapsed }
+      const getValue = () => {
+        if (action.value !== undefined) {
+          return action.value;
+        }
+
+        return props.isTableBodyCollapsed === undefined ? false : !props.isTableBodyCollapsed
+      }
+
+      return { ...props, isTableBodyCollapsed: getValue() }
     }
   }
   return props;

@@ -14,12 +14,13 @@ const TableBody: React.FunctionComponent<ITableBodyProps> = (props) => {
     className: defaultOptions.css.tbody,
   }, props, childComponents.tableBody);
 
-  const renderChildren = isTableBodyCollapsed === undefined || isTableBodyCollapsed ? (content || <TableBodyContent {...props} />) : null;
-
   return (
-    <tbody {...elementAttributes}>
-    {renderChildren}
-    </tbody>
+    isTableBodyCollapsed === undefined || isTableBodyCollapsed ?
+      (
+        <tbody {...elementAttributes}>
+          {content || <TableBodyContent {...props} />}
+        </tbody>
+      ) : null
   );
 };
 
