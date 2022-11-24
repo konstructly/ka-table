@@ -60,6 +60,7 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
             isExpanded={groupsExpanded.some((ge) => JSON.stringify(ge) === JSON.stringify(d.key))}
             text={getGroupText(d.value, column, format)}
             key={JSON.stringify(d.key)}
+            groupData={d.groupData}
           />
         );
       } else if (d.groupSummaryMark === groupSummaryMark) {
@@ -83,7 +84,7 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
             editingMode={props.editingMode}
             isTreeGroup={isTreeGroup}
             isTreeExpanded={isTreeExpanded}
-            treeDeep={isTreeRow === true ? d.treeDeep : undefined}
+            treeDeep={isTreeRow ? d.treeDeep : undefined}
             treeExpandButtonColumnKey={treeExpandButtonColumnKey}
             format={format}
             groupColumnsCount={props.groupColumnsCount}
