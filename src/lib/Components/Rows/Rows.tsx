@@ -8,6 +8,7 @@ import { treeDataMark, treeGroupMark } from '../../Utils/TreeUtils';
 import DataAndDetailsRows from '../DataAndDetailsRows/DataAndDetailsRows';
 import GroupRow from '../GroupRow/GroupRow';
 import { GroupSummaryRow } from '../GroupSummaryRow/GroupSummaryRow';
+import { objectToString } from '../../Utils/CommonUtils';
 
 export interface IRowsProps extends ITableBodyProps {
   onFirstRowRendered: (firstRowRef: RefObject<HTMLElement>) => any;
@@ -49,6 +50,16 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
         const groupIndex = d.key.length - 1;
         const group = groups && groups[groupIndex];
         const column = group && groupedColumns.find((c) => c.key === group.columnKey)!;
+
+        const key = ((): string[] => (d.key as any[]).map((gk) => {
+            if (typeof gk === 'object' || Array.isArray(gk)) {
+              return objectToString(gk);
+            }
+
+            return `${gk}`;
+          })
+        )()
+
         return (
           <GroupRow
             childComponents={childComponents}
@@ -56,11 +67,11 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
             contentColSpan={columns.length - groupIndex + groups.length}
             dispatch={dispatch}
             groupIndex={groupIndex}
-            groupKey={d.key}
-            isExpanded={groupsExpanded.some((ge) => JSON.stringify(ge) === JSON.stringify(d.key))}
+            groupKey={key}
+            isExpanded={groupsExpanded.some((ge) => JSON.stringify(ge) === JSON.stringify(key))}
             text={getGroupText(d.value, column, format)}
-            key={JSON.stringify(d.key)}
-            groupData={d.groupData}
+            key={JSON.stringify(key)}
+            groupData={data}
           />
         );
       } else if (d.groupSummaryMark === groupSummaryMark) {
