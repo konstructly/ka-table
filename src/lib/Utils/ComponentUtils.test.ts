@@ -1,5 +1,4 @@
 import { addElementAttributes, getElementCustomization } from './ComponentUtils';
-import { objectToString } from './CommonUtils';
 
 describe('getElementCustomization', () => {
   it('should return content & attributes', () => {
@@ -55,51 +54,3 @@ describe('addElementAttributes', () => {
     });
   });
 });
-
-describe('objectToString', () => {
-  it('should return a string from an object', () => {
-    const test = {
-      a: 'str',
-      b: 123,
-      c: {
-        a: ['str', 'rts'],
-        b: {
-          a: {
-            a: 1234
-          },
-          b: null
-        }
-      }
-    }
-
-    expect(objectToString(test)).toEqual('a:strb:1230:str1:rtsa:1234b:null')
-  })
-
-  it('should return a string from array', () => {
-    const test = [
-      {
-        a: 'str',
-        b: 123,
-        c: {
-          a: ['str', 'rts'],
-          b: {
-            a: {
-              a: 1234
-            },
-            b: null
-          }
-        }
-      },
-      {
-        a: 'str'
-      },
-      {
-        b: ['a', 'b', 1, 2, 3, 4, {
-          a: 'next'
-        }]
-      }
-    ]
-
-    expect(objectToString(test)).toEqual('a:strb:1230:str1:rtsa:1234b:nulla:str0:a1:b2:13:24:35:4a:next')
-  })
-})

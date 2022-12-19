@@ -3,6 +3,7 @@ import { Column } from '../models';
 import { Group } from '../Models/Group';
 import { FormatFunc } from '../types';
 import { getValueByColumn } from './DataUtils';
+import { objectToString } from './CommonUtils';
 
 export const groupMark = {};
 export const groupSummaryMark = {};
@@ -61,7 +62,7 @@ export const getGroupedStructure = (
   if (group) {
     const column = groupedColumns && groupedColumns.find((g) => g.key === group.columnKey);
     if (column) {
-      const grouped = groupBy(data, (item: any) => getValueByColumn(item, column));
+      const grouped = groupBy(data, (item: any) => getValueByColumn(item, column), false, column.getGroupKey);
       grouped.forEach((groupData, key) => {
         const groupExpandedItems = groupsExpanded && groupsExpanded.filter((ge) => ge[expandedDeep] === key);
         const isGroupExpanded = !groupExpandedItems
@@ -94,10 +95,21 @@ export const getGroupedStructure = (
   }
 };
 
-export const groupBy = (data: any[], keyGetter: any, isEmptyValue: boolean = false) => {
+export const groupBy = (data: any[], keyGetter: any, isEmptyValue: boolean = false, groupKeyGetter?: (item: any) => string) => {
   const map = new Map();
   data.forEach((item) => {
-    const key = keyGetter(item);
+    const key = (() => {
+      if (typeof item !== 'object') {
+        return keyGetter(item)
+      }
+
+      if (groupKeyGetter) {
+        return groupKeyGetter(keyGetter(item))
+      }
+
+      return objectToString(keyGetter(item))
+    })();
+
     if (isEmptyValue) {
       map.set(key, []);
     } else {

@@ -21,4 +21,5 @@ export class Column {
   public title?: string;
   public visible?: boolean;
   public width?: number | string;
+  public getGroupKey?: (rowData: any) => string
 }
