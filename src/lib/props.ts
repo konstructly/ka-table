@@ -250,7 +250,7 @@ export interface ISummaryLine extends IHeadRowProps {
   isTableBodyCollapsed?: boolean
   top: number;
   data: unknown[] | undefined;
-  customClickHandler: boolean;
+  customClickHandler?: boolean;
 }
 
 export interface ILoadingProps {
