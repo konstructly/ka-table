@@ -17,17 +17,17 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
 
   return (
     <>
-      <tr {...elementAttributes} style={{top: `${top}px`}} onClick={() => !props.customClickHandler && dispatch(collapseTableBody())} role='none'>
+      <tr {...elementAttributes} style={{top: `${top}px`}}>
         {content ||
           (
             <>
-              <th className={defaultOptions.css.summaryLineCell}>
+              <th className={defaultOptions.css.summaryLineCell} onClick={() => dispatch(collapseTableBody())} role='none'>
                 <div
                   className={isTableBodyCollapsed === undefined || isTableBodyCollapsed
                     ? defaultOptions.css.iconGroupArrowExpanded : defaultOptions.css.iconGroupArrowCollapsed}
                 />
               </th>
-              <th colSpan={columns.length - 1} className={defaultOptions.css.summaryLineCell}>
+              <th colSpan={columns.length - 1} className={defaultOptions.css.summaryLineCell} onClick={() => dispatch(collapseTableBody())} role='none'>
                 All
               </th>
             </>
