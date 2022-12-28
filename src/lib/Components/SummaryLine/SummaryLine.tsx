@@ -17,7 +17,7 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
 
   return (
     <>
-      <tr {...elementAttributes} style={{top: `${top}px`}} onClick={() => {dispatch(collapseTableBody())}} role='none'>
+      <tr {...elementAttributes} style={{top: `${top}px`}} onClick={() => !props.customClickHandler && dispatch(collapseTableBody())} role='none'>
         {content ||
           (
             <>
