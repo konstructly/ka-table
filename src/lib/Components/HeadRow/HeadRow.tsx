@@ -25,7 +25,13 @@ const HeadRow: React.FunctionComponent<IHeadRowProps> = (props) => {
   const trRef = useRef<HTMLTableRowElement | null>(null);
 
   useEffect(() => {
-    setHeaderRowHeight?.(trRef.current?.getBoundingClientRect().height)
+    const updateHeaderHeight = () => setHeaderRowHeight?.(trRef.current?.getBoundingClientRect().height)
+
+    updateHeaderHeight()
+    
+    window.addEventListener('resize', updateHeaderHeight);
+
+    return () => window.removeEventListener('resize', updateHeaderHeight);
   }, [trRef, setHeaderRowHeight]);
 
   return (
