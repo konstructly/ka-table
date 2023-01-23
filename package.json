@@ -84,7 +84,7 @@
     "react-highlight": "^0.14.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^5.0.1",
-    "sass": "^1.54.4",
+    "sass": "^1.57.1",
     "simulant": "^0.2.2",
     "tslint": "^6.1.0",
     "typescript": "~3.7.2"
