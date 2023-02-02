@@ -20,6 +20,7 @@ const props: IGroupRowProps = {
   groupKey: ['group'],
   isExpanded: false,
   text: '',
+  groupData: []
 };
 
 describe('GroupRowContent', () => {
