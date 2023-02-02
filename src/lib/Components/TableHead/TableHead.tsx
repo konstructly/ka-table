@@ -50,7 +50,7 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
               childComponents={childComponents}
               columns={columns}
               dispatch={dispatch}
-              groupColumnsCount={groupedColumns.length}
+              groupColumnsCount={groupColumnsCount}
               sortingMode={sortingMode}
               data={data}
             />

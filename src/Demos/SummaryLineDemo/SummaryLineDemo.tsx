@@ -28,9 +28,10 @@ const tablePropsInit: ITableProps = {
   virtualScrolling: {
     enabled: true
   },
+  groups: [{columnKey: 'column1'}]
 };
 
-const SummaryCollapsibleRowDemo: React.FC = () => {
+const SummaryLineDemo: React.FC = () => {
   const [tableProps, changeTableProps] = useState(tablePropsInit);
   const dispatch: DispatchFunc = (action) => {
     changeTableProps((prevState: ITableProps) => kaReducer(prevState, action));
@@ -50,4 +51,4 @@ const SummaryCollapsibleRowDemo: React.FC = () => {
   );
 };
 
-export default SummaryCollapsibleRowDemo;
+export default SummaryLineDemo;

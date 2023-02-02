@@ -4,7 +4,7 @@ import { ISummaryLine } from '../../props';
 import { getElementCustomization } from '../../Utils/ComponentUtils';
 
 export const SummaryLine: FC<ISummaryLine> = (props) => {
-  const {childComponents, columns} = props;
+  const {childComponents, columns, groupColumnsCount} = props;
   const {
     elementAttributes,
     content
@@ -14,7 +14,7 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
     <>
       <tr {...elementAttributes}>
         {content ||
-          <th colSpan={columns.length} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
+          <th colSpan={columns.length + groupColumnsCount} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
             All
           </th>
         }
