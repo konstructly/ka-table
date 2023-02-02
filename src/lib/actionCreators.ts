@@ -299,8 +299,3 @@ export const insertRow = (rowData: any, options?: {
   options,
   type: ActionType.InsertRow
 });
-
-export const collapseTableBody = (value?: boolean) => ({
-  type: ActionType.CollapseTableBody,
-  value
-});

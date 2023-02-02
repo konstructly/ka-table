@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import defaultOptions from '../../defaultOptions';
 import { FilteringMode } from '../../enums';
 import { ITableHeadProps } from '../../props';
@@ -21,20 +21,17 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
     sortingMode,
     groupedColumns = [],
     summaryLine,
-    isTableBodyCollapsed,
     data
   } = props;
   const {elementAttributes, content} = getElementCustomization({
     className: defaultOptions.css.thead,
   }, props, childComponents.tableHead);
-  const [headerRowHeight, setHeaderRowHeight] = useState<number | undefined>()
   return (
     <thead {...elementAttributes}>
     {content || (
       <>
         {groupedColumns.length ? <GroupedColumnsRow {...props} /> : (
           <HeadRow
-            setHeaderRowHeight={setHeaderRowHeight}
             areAllRowsSelected={areAllRowsSelected}
             childComponents={childComponents}
             columnReordering={columnReordering}
@@ -46,7 +43,7 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
             filteringMode={filteringMode}
           />
         )}
-        {(summaryLine && !groupedColumns.length) &&
+        {summaryLine &&
           (
             <SummaryLine
               areAllRowsSelected={areAllRowsSelected}
@@ -55,8 +52,6 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
               dispatch={dispatch}
               groupColumnsCount={groupedColumns.length}
               sortingMode={sortingMode}
-              top={headerRowHeight ?? 0}
-              isTableBodyCollapsed={isTableBodyCollapsed}
               data={data}
             />
           )}

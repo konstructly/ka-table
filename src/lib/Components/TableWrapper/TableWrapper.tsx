@@ -28,7 +28,6 @@ export const TableWrapper: React.FunctionComponent<ITableAllProps> = (props) => 
     sortingMode = SortingMode.None,
     virtualScrolling,
     summaryLine,
-    isTableBodyCollapsed
   } = props;
   let {
     groupsExpanded,
@@ -74,7 +73,6 @@ export const TableWrapper: React.FunctionComponent<ITableAllProps> = (props) => 
             groupColumnsCount={preparedOptions.groupColumnsCount}
             sortingMode={sortingMode}
             summaryLine={summaryLine}
-            isTableBodyCollapsed={isTableBodyCollapsed}
           />
           <TableBody
             {...props}

@@ -156,7 +156,6 @@ export interface ITableHeadProps {
   groupColumnsCount: number;
   sortingMode: SortingMode;
   summaryLine?: boolean;
-  isTableBodyCollapsed?: boolean;
   data?: unknown[];
 }
 
@@ -243,12 +242,9 @@ export interface IHeadRowProps {
   groupColumnsCount: number;
   groupedColumns?: GroupedColumn[];
   sortingMode: SortingMode;
-  setHeaderRowHeight?: Dispatch<SetStateAction<number | undefined>>
 }
 
 export interface ISummaryLine extends IHeadRowProps {
-  isTableBodyCollapsed?: boolean
-  top: number;
   data: unknown[] | undefined;
 }
 

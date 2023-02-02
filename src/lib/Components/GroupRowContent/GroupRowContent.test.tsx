@@ -34,7 +34,7 @@ describe('GroupRowContent', () => {
     const wrapper = mount(<GroupRowContent {...props} />, {
       attachTo: document.createElement('tr'),
     });
-    wrapper.find('.ka-icon-group-arrow').simulate('click');
+    wrapper.find('.ka-icon-group-arrow')?.simulate('click');
     expect(props.dispatch).toBeCalledTimes(1);
     expect(props.dispatch).toBeCalledWith({
       groupKey: ['group'],

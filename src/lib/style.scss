@@ -19,22 +19,16 @@
   table-layout: fixed;
   border-collapse: collapse;
 }
+.ka-thead {
+  top: 0;
+  position: sticky;
+}
 .ka-thead-background{
   background-color: $ka-thead-background-color;
 }
 .ka-thead-cell-height{
   box-sizing: border-box;
   height: $ka-header-cell-height;
-}
-.ka-thead-fixed {
-  position: sticky;
-}
-@for $i from 0 through 5 {
-  .ka-thead-row:nth-child(#{$i + 1}) {
-    .ka-thead-fixed {
-      top: $ka-header-cell-height * $i;
-    }
-  }
 }
 .ka-thead-cell{
   padding: $ka-thead-cell-padding;
@@ -315,11 +309,5 @@
 
 .ka-summary-line-row {
   width: 100%;
-  position: sticky;
   background: white;
-  cursor: pointer;
-}
-
-.ka-summary-line-cell {
-  padding-left: 7px;
 }
