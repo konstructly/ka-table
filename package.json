@@ -1,6 +1,6 @@
 {
   "name": "@konstructly/ka-table",
-  "version": "7.6.14",
+  "version": "7.8.4",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -87,7 +87,7 @@
     "sass": "^1.57.1",
     "simulant": "^0.2.2",
     "tslint": "^6.1.0",
-    "typescript": "~4.9.5" 
+    "typescript": "~4.9.5"
   },
   "jest": {
     "collectCoverageFrom": [
