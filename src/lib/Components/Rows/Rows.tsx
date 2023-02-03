@@ -61,6 +61,7 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
             text={getGroupText(d.value, column, format)}
             key={JSON.stringify(d.key)}
             groupData={data}
+            group={group}
           />
         );
       } else if (d.groupSummaryMark === groupSummaryMark) {
