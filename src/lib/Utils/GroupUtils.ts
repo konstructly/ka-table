@@ -1,4 +1,3 @@
-
 import { Column } from '../models';
 import { Group } from '../Models/Group';
 import { FormatFunc } from '../types';

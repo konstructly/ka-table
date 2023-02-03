@@ -1,6 +1,6 @@
 export const isEmpty = (value: any): boolean => (value == null || value.length === 0);
 
-export const objectToString = (obj: unknown): unknown => {
+export const objectToString = (obj: unknown, alternative?: number | string): string | number | undefined => {
   const isNotPrimitive = typeof obj !== 'object'
 
   const isNotDate = typeof obj === 'object' && typeof (obj as Date)?.getMonth !== 'function'
@@ -13,5 +13,5 @@ export const objectToString = (obj: unknown): unknown => {
     }
 
     return `${acc ? acc + ', ' : ''}${key}: ${value}`
-  }, '') : obj
+  }, '') : (String(obj) || alternative)
 }

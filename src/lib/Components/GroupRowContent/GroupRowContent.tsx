@@ -3,9 +3,9 @@ import React from 'react';
 import { updateGroupsExpanded } from '../../actionCreators';
 import defaultOptions from '../../defaultOptions';
 import { IGroupRowProps } from '../../props';
+import { objectToString } from '../../Utils/CommonUtils';
 import { getElementCustomization } from '../../Utils/ComponentUtils';
 import EmptyCells from '../EmptyCells/EmptyCells';
-import toString from "lodash.tostring";
 
 const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
   const {
@@ -41,7 +41,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
           </div>
       </td>
       {customCells?.map((customCell, index) => 
-        <td {...{...elementAttributes, colSpan: undefined}} key={toString(customCell)}>
+        <td {...{...elementAttributes, colSpan: undefined}} key={objectToString(customCell, index)}>
           {customCell}
         </td>
       )}
