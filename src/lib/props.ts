@@ -106,7 +106,6 @@ export interface IGroupRowProps {
   isExpanded: boolean;
   text: string;
   groupData: any[]
-  customColumns?: JSX.Element[]
 }
 
 export interface IGroupSummaryRowProps extends IRowsProps {
@@ -246,7 +245,6 @@ export interface IHeadRowProps {
 
 export interface ISummaryLine extends IHeadRowProps {
   data: unknown[] | undefined;
-  customColumns?: JSX.Element[]
 }
 
 export interface ILoadingProps {

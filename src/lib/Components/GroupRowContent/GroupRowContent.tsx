@@ -15,10 +15,9 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
     groupKey,
     isExpanded,
     text,
-    customColumns,
   } = props;
 
-  const { elementAttributes, content } = getElementCustomization({
+  const { elementAttributes, content, customCells } = getElementCustomization({
     className: defaultOptions.css.groupCell,
     colSpan: contentColSpan
   }, props, childComponents.groupCell);
@@ -26,7 +25,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
   return (
     <>
       <EmptyCells count={groupIndex}/>
-      <td {...{...elementAttributes, contentColSpan: (elementAttributes?.colSpan ?? 0) - (customColumns?.length ?? 0)}}>
+      <td {...{...elementAttributes, contentColSpan: (elementAttributes?.colSpan ?? 0) - (customCells?.length ?? 0)}}>
           <div className='ka-group-cell-content'>
             <div
               onClick={() => {
@@ -40,7 +39,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
             }
           </div>
       </td>
-      {customColumns?.map((customColumn) => <td {...{...elementAttributes, contentColSpan: 0}}>{customColumn}</td>)}
+      {customCells?.map((customCell) => <td {...{...elementAttributes, contentColSpan: 0}}>{customCell}</td>)}
     </>
   );
 };
