@@ -4,7 +4,6 @@ import { EditingMode, FilteringMode, SortingMode } from './enums';
 import { ChildComponents, Column, EditableCell, Group, VirtualScrolling } from './models';
 import { GroupedColumn } from './Models/GroupedColumn';
 import { DispatchFunc, Field, FormatFunc, ValidationFunc } from './types';
-import { Dispatch, SetStateAction } from 'react';
 
 export interface IColGroupProps {
   columns: Column[];
@@ -107,6 +106,7 @@ export interface IGroupRowProps {
   isExpanded: boolean;
   text: string;
   groupData: any[]
+  customColumns?: JSX.Element[]
 }
 
 export interface IGroupSummaryRowProps extends IRowsProps {
@@ -246,6 +246,7 @@ export interface IHeadRowProps {
 
 export interface ISummaryLine extends IHeadRowProps {
   data: unknown[] | undefined;
+  customColumns?: JSX.Element[]
 }
 
 export interface ILoadingProps {
