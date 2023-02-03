@@ -39,7 +39,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
             }
           </div>
       </td>
-      {customCells?.map((customCell) => <td {...{...elementAttributes, contentColSpan: 0}}>{customCell}</td>)}
+      {customCells?.map((customCell) => <td {...{...elementAttributes, colSpan: undefined}}>{customCell}</td>)}
     </>
   );
 };
