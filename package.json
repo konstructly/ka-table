@@ -1,6 +1,6 @@
 {
   "name": "@konstructly/katable",
-  "version": "7.8.14",
+  "version": "7.8.15",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "dist": "tsc --declaration --jsx react --esModuleInterop true --outDir dist src/lib/index.ts && gulp build",
     "pack": "gulp build && cd dist && npm pack && cd ..",
-    "compile": "tsc src/lib/index.ts --jsx react --esModuleInterop true --outDir dist --declaration true --target es5 && gulp compile"
+    "compile": "tsc src/lib/index.ts --jsx react --esModuleInterop true --outDir dist --declaration true --target es5 --lib 'es2019,dom' && gulp compile"
   },
   "eslintConfig": {
     "extends": "react-app",
