@@ -25,7 +25,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
   return (
     <>
       <EmptyCells count={groupIndex}/>
-      <td {...{...elementAttributes, contentColSpan: (elementAttributes?.colSpan ?? 0) - (customCells?.length ?? 0)}}>
+      <td {...{...elementAttributes, colSpan: (elementAttributes?.colSpan ?? 0) - (customCells?.length ?? 0)}}>
           <div className='ka-group-cell-content'>
             <div
               onClick={() => {
