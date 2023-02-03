@@ -19,7 +19,11 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
             All
           </th>
         }
-        {customCells?.map((cell) => <th className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>{cell}</th>)}
+        {customCells?.map((customCell, index) => (
+          <th key={customCell ? Object.entries(customCell).flat().join("-") : index} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
+            {customCell}
+          </th>
+        ))}
       </tr>
     </>
   )
