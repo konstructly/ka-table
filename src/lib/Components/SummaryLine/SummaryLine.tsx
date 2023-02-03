@@ -16,7 +16,7 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
     <>
       <tr {...elementAttributes}>
         {content ||
-          <th colSpan={columns.length + groupColumnsCount} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
+          <th colSpan={columns.length + groupColumnsCount - (customCells?.length ?? 0)} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
             All
           </th>
         }
