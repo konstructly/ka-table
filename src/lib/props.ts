@@ -106,7 +106,6 @@ export interface IGroupRowProps {
   isExpanded: boolean;
   text: string;
   groupData: any[]
-  group?: Group
 }
 
 export interface IGroupSummaryRowProps extends IRowsProps {
