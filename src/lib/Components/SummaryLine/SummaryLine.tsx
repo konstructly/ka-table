@@ -1,3 +1,4 @@
+import toString from "lodash.tostring";
 import React, { FC } from 'react';
 import defaultOptions from '../../defaultOptions';
 import { ISummaryLine } from '../../props';
@@ -20,7 +21,7 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
           </th>
         }
         {customCells?.map((customCell, index) => (
-          <th key={customCell ? Object.entries(customCell).flat().join("-") : index} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
+          <th key={toString(customCell) ?? index} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
             {customCell}
           </th>
         ))}

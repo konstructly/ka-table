@@ -21,6 +21,7 @@
     "date-fns": "^2.29.3",
     "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.5.13",
+    "lodash.tostring": "^4.1.4",
     "lorem-ipsum": "^2.0.3",
     "react": "17.0.2",
     "react-csv": "^2.0.3",
@@ -65,6 +66,7 @@
   },
   "devDependencies": {
     "@types/jest": "25.1.4",
+    "@types/lodash.tostring": "^4.1.7",
     "@types/node": "13.9.2",
     "@types/react-dom": "17.0.6",
     "@types/react-highlight": "^0.12.2",
