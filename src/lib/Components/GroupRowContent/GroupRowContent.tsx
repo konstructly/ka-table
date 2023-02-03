@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { renderToString } from "react-dom/server";
 import { updateGroupsExpanded } from '../../actionCreators';
 import defaultOptions from '../../defaultOptions';
 import { IGroupRowProps } from '../../props';
-import { objectToString } from '../../Utils/CommonUtils';
 import { getElementCustomization } from '../../Utils/ComponentUtils';
 import EmptyCells from '../EmptyCells/EmptyCells';
 
@@ -41,7 +41,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
           </div>
       </td>
       {customCells?.map((customCell, index) => 
-        <td {...{...elementAttributes, colSpan: undefined}} key={objectToString(customCell, index)}>
+        <td {...{...elementAttributes, colSpan: undefined}} key={customCell ? renderToString(customCell) : index}>
           {customCell}
         </td>
       )}

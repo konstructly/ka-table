@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
+import { renderToString } from 'react-dom/server';
 import defaultOptions from '../../defaultOptions';
 import { ISummaryLine } from '../../props';
-import { objectToString } from '../../Utils/CommonUtils';
 import { getElementCustomization } from '../../Utils/ComponentUtils';
 
 export const SummaryLine: FC<ISummaryLine> = (props) => {
@@ -21,7 +21,7 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
           </th>
         }
         {customCells?.map((customCell, index) => (
-          <th key={objectToString(customCell, index)} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
+          <th key={customCell ? renderToString(customCell) : index} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
             {customCell}
           </th>
         ))}

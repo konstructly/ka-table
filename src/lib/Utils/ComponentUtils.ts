@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes, ReactNode } from 'react';
+import React, { AllHTMLAttributes, ReactElement } from 'react';
 
 import { ChildComponent } from '../Models/ChildComponent';
 import { ChildAttributesItem } from '../types';
@@ -7,7 +7,7 @@ import { extendProps } from './PropsUtils';
 class ElementCustomization<T = HTMLElement> {
   content?: any;
   elementAttributes!: React.AllHTMLAttributes<T>;
-  customCells?: (JSX.Element | ReactNode | string | null)[];
+  customCells?: ReactElement[];
 }
 export function getElementCustomization<T = HTMLElement>(
   childElementAttributes: AllHTMLAttributes<T>,
