@@ -21,7 +21,7 @@ export const SummaryLine: FC<ISummaryLine> = (props) => {
           </th>
         }
         {customCells?.map((customCell, index) => (
-          <th key={customCell ? renderToString(customCell) : index} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
+          <th key={`${renderToString(customCell)}:${index}`} className={`${defaultOptions.css.summaryLineCell} ${defaultOptions.css.theadCell}`}>
             {customCell}
           </th>
         ))}

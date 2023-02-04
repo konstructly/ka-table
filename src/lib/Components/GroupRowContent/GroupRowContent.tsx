@@ -41,7 +41,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
           </div>
       </td>
       {customCells?.map((customCell, index) => 
-        <td {...{...elementAttributes, colSpan: undefined}} key={customCell ? renderToString(customCell) : index}>
+        <td {...{...elementAttributes, colSpan: undefined}} key={`${renderToString(customCell)}:${index}`}>
           {customCell}
         </td>
       )}
