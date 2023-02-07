@@ -26,6 +26,7 @@ const props: IDataRowProps = {
   rowKeyField: 'column',
   rowKeyValue: '',
   selectedRows: [],
+  groupColumnsCount: 0
 };
 
 describe('DataRowContent', () => {

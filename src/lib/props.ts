@@ -94,6 +94,7 @@ export interface IDataRowProps extends IRowCommonProps {
   isDetailsRowShown: boolean;
   isSelectedRow: boolean;
   rowEditableCells: EditableCell[];
+  groupColumnsCount: number;
 }
 
 export interface IGroupRowProps {
