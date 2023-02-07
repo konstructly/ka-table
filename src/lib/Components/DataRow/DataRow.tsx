@@ -33,11 +33,13 @@ const DataRow: React.FunctionComponent<IRowProps> = (props) => {
 
   return (
     <tr ref={trRef} {...elementAttributes}>
-      <EmptyCells count={groupColumnsCount}/>
       {content
         ? <>{content}</>
         : (
-          <DataRowContent {...props}/>
+          <>
+            <EmptyCells count={groupColumnsCount}/>
+            <DataRowContent {...props}/>
+          </>
         )
       }
     </tr>
