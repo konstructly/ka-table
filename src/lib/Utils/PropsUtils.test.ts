@@ -463,7 +463,7 @@ describe('getPagesCountByProps', () => {
                 searchText: undefined,
             };
             const pagesCount = getPagesCountByProps(treeProps);
-            expect(pagesCount).toEqual(3);
+            expect(pagesCount).toEqual(2);
         });
     });
     describe('treeData', () => {

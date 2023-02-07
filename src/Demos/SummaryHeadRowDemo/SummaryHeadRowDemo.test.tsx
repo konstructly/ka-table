@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SummaryHeadRowDemo from './SummaryHeadRow';
+import SummaryHeadRowDemo from './SummaryHeadRowDemo';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

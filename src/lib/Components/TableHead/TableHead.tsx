@@ -20,7 +20,6 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
     groupColumnsCount,
     sortingMode,
     groupedColumns = [],
-    summaryLine,
     data
   } = props;
   const {elementAttributes, content} = getElementCustomization({
@@ -43,18 +42,17 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
             filteringMode={filteringMode}
           />
         )}
-        {summaryLine &&
-          (
-            <SummaryHeadRow
-              areAllRowsSelected={areAllRowsSelected}
-              childComponents={childComponents}
-              columns={columns}
-              dispatch={dispatch}
-              groupColumnsCount={groupColumnsCount}
-              sortingMode={sortingMode}
-              data={data}
-            />
-          )}
+        {childComponents.summaryHeadRow && 
+          <SummaryHeadRow
+            areAllRowsSelected={areAllRowsSelected}
+            childComponents={childComponents}
+            columns={columns}
+            dispatch={dispatch}
+            groupColumnsCount={groupColumnsCount}
+            sortingMode={sortingMode}
+            data={data}
+          />
+        }
         {
           filteringMode === FilteringMode.FilterRow &&
           (

@@ -45,7 +45,8 @@ const SummaryHeadRowDemo: React.FC = () => {
       childComponents={{
         tableWrapper: {
           elementAttributes: () => ({ style: { maxHeight: 600 }})
-        }
+        },
+        summaryHeadRow: {},
       }}
     />
   );
