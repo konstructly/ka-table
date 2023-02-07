@@ -32,7 +32,7 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
     rowReordering,
     selectedRows,
     validation,
-    treeExpandButtonColumnKey
+    treeExpandButtonColumnKey,
   } = props;
   const groupMark = getGroupMark();
 
@@ -61,6 +61,7 @@ const Rows: React.FunctionComponent<IRowsProps> = (props) => {
             text={getGroupText(d.value, column, format)}
             key={JSON.stringify(d.key)}
             groupData={data}
+            columns={columns}
           />
         );
       } else if (d.groupSummaryMark === groupSummaryMark) {

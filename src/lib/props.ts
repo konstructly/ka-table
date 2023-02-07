@@ -99,6 +99,7 @@ export interface IDataRowProps extends IRowCommonProps {
 export interface IGroupRowProps {
   childComponents: ChildComponents;
   column: Column;
+  columns: Column[];
   contentColSpan: number;
   dispatch: DispatchFunc;
   groupIndex: number;

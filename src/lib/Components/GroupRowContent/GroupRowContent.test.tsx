@@ -14,6 +14,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const props: IGroupRowProps = {
   childComponents: {},
   column: { key: 'field' },
+  columns: [],
   contentColSpan: 0,
   dispatch: jest.fn(),
   groupIndex: 0,
