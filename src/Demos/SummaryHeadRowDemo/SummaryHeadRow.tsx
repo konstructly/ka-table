@@ -31,7 +31,7 @@ const tablePropsInit: ITableProps = {
   groups: [{columnKey: 'column1'}]
 };
 
-const SummaryLineDemo: React.FC = () => {
+const SummaryHeadRowDemo: React.FC = () => {
   const [tableProps, changeTableProps] = useState(tablePropsInit);
   const dispatch: DispatchFunc = (action) => {
     changeTableProps((prevState: ITableProps) => kaReducer(prevState, action));
@@ -51,4 +51,4 @@ const SummaryLineDemo: React.FC = () => {
   );
 };
 
-export default SummaryLineDemo;
+export default SummaryHeadRowDemo;

@@ -243,7 +243,7 @@ export interface IHeadRowProps {
   sortingMode: SortingMode;
 }
 
-export interface ISummaryLine extends IHeadRowProps {
+export interface ISummaryHeadRow extends IHeadRowProps {
   data: unknown[] | undefined;
 }
 

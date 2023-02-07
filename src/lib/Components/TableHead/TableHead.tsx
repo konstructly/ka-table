@@ -6,7 +6,7 @@ import { getElementCustomization } from '../../Utils/ComponentUtils';
 import FilterRow from '../FilterRow/FilterRow';
 import { GroupedColumnsRow } from '../GroupedColumnsRow/GroupedColumnsRow';
 import HeadRow from '../HeadRow/HeadRow';
-import { SummaryLine } from '../SummaryLine/SummaryLine';
+import { SummaryHeadRow } from '../SummaryHeadRow/SummaryHeadRow';
 
 export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
   const {
@@ -45,7 +45,7 @@ export const TableHead: React.FunctionComponent<ITableHeadProps> = (props) => {
         )}
         {summaryLine &&
           (
-            <SummaryLine
+            <SummaryHeadRow
               areAllRowsSelected={areAllRowsSelected}
               childComponents={childComponents}
               columns={columns}

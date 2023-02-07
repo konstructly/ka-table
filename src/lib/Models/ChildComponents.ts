@@ -4,7 +4,7 @@ import {
   IGroupRowProps, IGroupSummaryCellProps, IGroupSummaryRowProps, IHeadCellProps,
   IHeadCellResizeProps, IHeaderFilterButtonProps, IHeadRowProps, ILoadingProps, INoDataRowProps,
   IPagingIndexProps, IPagingProps, IPagingSizeProps, IPopupContentItemProps, IPopupContentProps,
-  ISortIconProps, ISummaryCellProps, ISummaryLine, ISummaryRowProps, ITableBodyProps, ITableFootProps,
+  ISortIconProps, ISummaryCellProps, ISummaryHeadRow, ISummaryRowProps, ITableBodyProps, ITableFootProps,
   ITableHeadProps,
 } from '../props';
 import { ChildComponent } from './ChildComponent';
@@ -15,7 +15,7 @@ export class ChildComponents {
   public cellEditorInput?: ChildComponent<ICellEditorProps>;
   public cellText?: ChildComponent<ICellTextProps>;
   public dataRow?: ChildComponent<IDataRowProps>;
-  public summaryLine?: ChildComponent<ISummaryLine>;
+  public summaryHeadRow?: ChildComponent<ISummaryHeadRow>;
   public detailsRow?: ChildComponent<IDataRowProps>;
   public filterRowCell?: ChildComponent<IFilterRowEditorProps>;
   public groupCell?: ChildComponent<IGroupRowProps>;

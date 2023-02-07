@@ -23,8 +23,8 @@ export class CssClasses {
   public theadCellHeight = 'ka-thead-cell-height';
   public summaryCell = 'ka-summary-cell';
   public summaryRow = 'ka-summary-row';
-  public summaryLineRow = 'ka-summary-line-row';
-  public summaryLineCell = 'ka-summary-line-cell';
+  public summaryHeadRow = 'ka-summary-line-row';
+  public summaryHeadCell = 'ka-summary-line-cell';
   public theadCellContent = 'ka-thead-cell-content';
   public theadCellContentWrapper = 'ka-thead-cell-content-wrapper';
   public theadCellResize = 'ka-thead-cell-resize';

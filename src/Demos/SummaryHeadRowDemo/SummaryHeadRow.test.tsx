@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SummaryLineDemo from './SummaryLineDemo';
+import SummaryHeadRowDemo from './SummaryHeadRow';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<SummaryLineDemo />, div);
+  ReactDOM.render(<SummaryHeadRowDemo />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

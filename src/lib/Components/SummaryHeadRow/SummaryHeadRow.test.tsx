@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SummaryLine } from './SummaryLine';
+import { SummaryHeadRow } from './SummaryHeadRow';
 
 const tableProps: any = {
   childComponents: {},
@@ -18,12 +18,12 @@ const tableProps: any = {
 
 it('renders without crashing without collapsible row', () => {
   const div = document.createElement('tr');
-  ReactDOM.render(<SummaryLine {...tableProps} />, div);
+  ReactDOM.render(<SummaryHeadRow {...tableProps} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders without crashing with collapsible row', () => {
   const div = document.createElement('tr');
-  ReactDOM.render(<SummaryLine {...{...tableProps, summaryCollapsibleRow: true}} />, div);
+  ReactDOM.render(<SummaryHeadRow {...{...tableProps, summaryCollapsibleRow: true}} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
