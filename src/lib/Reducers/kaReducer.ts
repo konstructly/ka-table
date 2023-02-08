@@ -17,7 +17,7 @@ import {
   getEditableCellsByData,
   getUpdatedFocused,
   getValidatedEditableCells,
-  removeDataKeysFromSelectedRows,
+  removeDataKeysFromSelectedRows
 } from '../Utils/ReducerUtils';
 import { getExpandedParents } from '../Utils/TreeUtils';
 
@@ -328,6 +328,14 @@ const kaReducer: any = (props: ITableProps, action: any): ITableProps => {
         action.groupKey,
       );
       return { ...props, groupsExpanded: newGroupsExpanded };
+    }
+    case ActionType.CollpaseAllGroups: {
+      return { ...props, groupsExpanded: [] };
+    }
+    case ActionType.ExpandAllGroups: {
+      const preparedOptions = prepareTableOptions(props);
+      const groups = getExpandedGroups(preparedOptions.groupedData);
+      return { ...props, groupsExpanded: groups}
     }
     case ActionType.ShowNewRow:
     case ActionType.OpenRowEditors: {

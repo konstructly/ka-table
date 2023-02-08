@@ -1,11 +1,13 @@
 export const isEmpty = (value: any): boolean => (value == null || value.length === 0);
 
-export const objectToString = (obj: unknown, alternative?: number | string): string | number | undefined => {
-  const isNotPrimitive = typeof obj !== 'object'
+export const objectToString = (obj: unknown): unknown => {
+  const isNotNull = obj !== undefined && isNaN(obj as number) && obj !== null
+  
+  const isNotPrimitive = typeof obj === 'object'
 
-  const isNotDate = typeof obj === 'object' && typeof (obj as Date)?.getMonth !== 'function'
+  const isNotDate = isNotPrimitive && typeof (obj as Date)?.getMonth !== 'function'
 
-  const isObject = isNotPrimitive && isNotDate
+  const isObject = isNotNull && isNotPrimitive && isNotDate
 
   return isObject ? Object.entries(obj as object).reduce((acc, [key, value]) => {
     if (value && (typeof value === 'object' || Array.isArray(value))) {
@@ -13,5 +15,5 @@ export const objectToString = (obj: unknown, alternative?: number | string): str
     }
 
     return `${acc ? acc + ', ' : ''}${key}: ${value}`
-  }, '') : (String(obj) || alternative)
+  }, '') : obj
 }

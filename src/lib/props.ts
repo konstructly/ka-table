@@ -178,7 +178,6 @@ export interface ITableBodyProps {
   selectedRows: any[];
   validation?: ValidationFunc;
   virtualScrolling?: VirtualScrolling;
-  isTableBodyCollapsed?: boolean;
   treeExpandButtonColumnKey?: string;
 }
 

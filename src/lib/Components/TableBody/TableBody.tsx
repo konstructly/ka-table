@@ -6,21 +6,19 @@ import React from 'react';
 
 const TableBody: React.FunctionComponent<ITableBodyProps> = (props) => {
   const {
-    childComponents,
-    isTableBodyCollapsed
+    childComponents
   } = props;
 
   const {elementAttributes, content} = getElementCustomization({
     className: defaultOptions.css.tbody,
   }, props, childComponents.tableBody);
 
+  console.log(props.groupedColumns)
+
   return (
-    isTableBodyCollapsed === undefined || isTableBodyCollapsed ?
-      (
-        <tbody {...elementAttributes}>
-          {content || <TableBodyContent {...props} />}
-        </tbody>
-      ) : null
+    <tbody {...elementAttributes}>
+      {content || <TableBodyContent {...props} />}
+    </tbody>
   );
 };
 

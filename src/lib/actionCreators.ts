@@ -124,6 +124,14 @@ export const updateGroupsExpanded = (groupKey: any[]) => ({
   type: ActionType.UpdateGroupsExpanded,
 });
 
+export const collapseAllGroups = () => ({
+  type: ActionType.CollpaseAllGroups,
+});
+
+export const expandAllGroups = () => ({
+  type: ActionType.ExpandAllGroups,
+});
+
 export const updateData = (data: any[]) => ({
   data,
   type: ActionType.UpdateData,
