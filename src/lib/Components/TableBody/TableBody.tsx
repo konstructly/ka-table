@@ -13,11 +13,9 @@ const TableBody: React.FunctionComponent<ITableBodyProps> = (props) => {
     className: defaultOptions.css.tbody,
   }, props, childComponents.tableBody);
 
-  console.log(props.groupedColumns)
-
   return (
     <tbody {...elementAttributes}>
-      {content || <TableBodyContent {...props} />}
+    {content || <TableBodyContent {...props} />}
     </tbody>
   );
 };

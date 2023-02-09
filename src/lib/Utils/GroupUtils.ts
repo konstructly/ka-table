@@ -7,7 +7,12 @@ import { objectToString } from './CommonUtils';
 export const groupMark = {};
 export const groupSummaryMark = {};
 
-const getGroupSummary = (groupData: any[], key: any, groupIndex: any) => ({ groupData, groupSummaryMark, key: JSON.stringify([key, '--:+summary--']), groupIndex });
+const getGroupSummary = (groupData: any[], key: any, groupIndex: any) => ({
+  groupData,
+  groupSummaryMark,
+  key: JSON.stringify([key, '--:+summary--']),
+  groupIndex
+});
 
 export const updateExpandedGroups = (groupsExpanded: any[][], groupKey: any[]): any[][] => {
   const newGroupsExpanded =
@@ -36,12 +41,12 @@ export const getGroupedData = (
 export const convertToFlat = (grouped: Map<any, any>, key: any[] = []) => {
   let result: any[] = [];
   grouped.forEach((value: any, groupValue: any) => {
-    if (groupValue === groupSummaryMark){
+    if (groupValue === groupSummaryMark) {
       result.push(value);
     } else {
       const groupKey = [...key];
       groupKey.push(groupValue);
-      result.push({ groupMark, key: groupKey, value: groupValue });
+      result.push({groupMark, key: groupKey, value: groupValue});
       result = [...result, ...(Array.isArray(value) ? value : convertToFlat(value, groupKey))];
     }
   });
@@ -67,7 +72,7 @@ export const getGroupedStructure = (
         const isGroupExpanded = !groupExpandedItems
           || groupExpandedItems.some((ge) => ge.length === expandedDeep + 1);
         if (isGroupExpanded) {
-          const fullKey =  [...parentGroupKey, key];
+          const fullKey = [...parentGroupKey, key];
           const newStructure = getGroupedStructure(
             groupData,
             groups,
@@ -78,7 +83,7 @@ export const getGroupedStructure = (
           );
 
           if (newStructure) {
-            if (group.enableSummary){
+            if (group.enableSummary) {
               newStructure.set(groupSummaryMark, getGroupSummary(groupData, fullKey, expandedDeep));
             }
             grouped.set(key, newStructure);
@@ -114,9 +119,9 @@ export const groupBy = (data: any[], keyGetter: any, isEmptyValue: boolean = fal
     } else {
       const collection = map.get(key);
       if (!collection) {
-          map.set(key, [item]);
+        map.set(key, [item]);
       } else {
-          collection.push(item);
+        collection.push(item);
       }
     }
   });
@@ -125,6 +130,10 @@ export const groupBy = (data: any[], keyGetter: any, isEmptyValue: boolean = fal
 
 export const getGroupMark = () => groupMark;
 
-export const getGroupText = (value: any, column: Column, format?: FormatFunc) => {
-  return format ? format({ column, value }) : `${(column && column.title ? column.title + ': ' : '')}${value}`;
+export const getGroupText = (value: any, column: Column, format: FormatFunc | null, withoutColumnTitle?: boolean) => {
+  if (withoutColumnTitle) {
+    return value
+  }
+
+  return format ? format({column, value}) : `${(column && column.title ? column.title + ': ' : '')}${value}`;
 };
