@@ -108,6 +108,7 @@ export interface IGroupRowProps {
   isExpanded: boolean;
   text: string;
   groupData: any[]
+  isGroupWithoutColumnTitle?: boolean
 }
 
 export interface IGroupSummaryRowProps extends IRowsProps {
@@ -124,6 +125,7 @@ export interface IHeadCellResizeProps {
   column: Column;
   childComponents: ChildComponents;
 }
+
 export interface IHeadCellProps {
   areAllRowsSelected: boolean;
   childComponents: ChildComponents;
@@ -179,14 +181,17 @@ export interface ITableBodyProps {
   validation?: ValidationFunc;
   virtualScrolling?: VirtualScrolling;
   treeExpandButtonColumnKey?: string;
+  isGroupWithoutColumnTitle?: boolean
 }
 
 export interface ITableFootProps extends ITableAllProps {
   data: any[];
   groupColumnsCount: number;
 }
+
 export interface ISummaryRowProps extends ITableFootProps {
 }
+
 export interface ISummaryCellProps extends ISummaryRowProps {
   column: Column;
 }
@@ -263,6 +268,7 @@ export interface IPagingProps {
   pageSizes?: number[];
   pagesCount?: number;
 }
+
 export interface IPagingSizeProps extends IPagingProps {
   value: number;
 }

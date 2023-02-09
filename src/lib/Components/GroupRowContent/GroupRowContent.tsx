@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { renderToString } from "react-dom/server";
+import { renderToString } from 'react-dom/server';
 import { updateGroupsExpanded } from '../../actionCreators';
 import defaultOptions from '../../defaultOptions';
 import { IGroupRowProps } from '../../props';
@@ -25,7 +25,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
 
   return (
     <>
-      <EmptyCells count={groupIndex} key="emptyCells"/>
+      <EmptyCells count={groupIndex} key='emptyCells'/>
       <td {...{...elementAttributes, colSpan: (elementAttributes?.colSpan ?? 0) - (customCells?.length ?? 0)}}>
           <div className='ka-group-cell-content'>
             <div
@@ -40,7 +40,7 @@ const GroupRowContent: React.FunctionComponent<IGroupRowProps> = (props) => {
             }
           </div>
       </td>
-      {customCells?.map((customCell, index) => 
+      {customCells?.map((customCell, index) =>
         <td {...{...elementAttributes, colSpan: undefined}} key={`${renderToString(customCell)}:${index}`}>
           {customCell}
         </td>

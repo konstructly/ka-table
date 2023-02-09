@@ -57,7 +57,7 @@ export interface ITableProps {
   virtualScrolling?: VirtualScrolling;
   width?: number | string;
   summaryLine?: boolean;
-  isTableBodyCollapsed?: boolean;
+  isGroupWithoutColumnTitle?: boolean
 }
 
 export interface ITableEvents {
